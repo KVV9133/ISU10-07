@@ -1,7 +1,7 @@
-all: prog
+all: d_p
 
-prog: main.o temp_api.o 
-	gcc -o prog main.o temp_api.o 
+d_p: main.o temp_api.o 
+	gcc -o d_p main.o temp_api.o 
 
 main.o: main.c
 	gcc -c -o main.o main.c
