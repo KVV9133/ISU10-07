@@ -5,16 +5,22 @@
 #include <stdint.h>
 
 
-
+union floatbit {
+    float value;
+    struct {
+        uint32_t mant : 23;
+        uint32_t exp : 8;
+        uint32_t sign : 1;
+    } bit;
+} f;
 
 
 int main()
 {	
-	float f=2.0;
-	int *p;
-	p=(int*)&f;
-	*p=(130)<<23;
-	printf("%f",f);
+	float a;
+	scanf("%f",&a);
+	f.value=a;
+	printf("%u",f.bit.exp);
 
     return 0;
 }
